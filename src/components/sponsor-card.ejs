@@ -1,0 +1,24 @@
+<article class="sponsor-card reveal">
+  <div class="sponsor-card__header">
+    <div class="sponsor-card__logo-box <%= sponsor.logoColorClass %>">
+      <span><%= sponsor.logoInitials %></span>
+    </div>
+    <div class="sponsor-card__name-block">
+      <h3 class="sponsor-card__name"><%= sponsor.name %></h3>
+      <p class="sponsor-card__industry"><%- sponsor.industry %></p>
+    </div>
+  </div>
+  <div class="sponsor-card__body">
+    <p class="sponsor-card__desc"><%= sponsor.desc %></p>
+    <div class="sponsor-card__contribution">
+      <p class="sponsor-card__contribution-label">Contribution</p>
+      <p class="sponsor-card__contribution-text"><%= sponsor.contribution %></p>
+    </div>
+    <div class="sponsor-card__footer">
+      <% sponsor.badges.forEach(function(badge) { %>
+      <span class="badge <%= sponsor.badgeVariant %>"><%= badge %></span>
+      <% }); %>
+      <a href="<%= sponsor.url %>" class="btn btn--outline-blue" target="_blank" rel="noopener noreferrer" aria-label="Visit <%= sponsor.name %> website">Visit Website</a>
+    </div>
+  </div>
+</article>

@@ -1,0 +1,180 @@
+﻿<%- include('../components/header', {
+  title: vehicle.vehicle.name,
+  description: 'Technical specifications, performance data, and subsystem documentation for the ' + vehicle.vehicle.name + ' &mdash; Industry 4.0 Aerospace SUAS 2026 competition aircraft.',
+  pageClass: 'page-vehicle',
+  currentPage: 'vehicle',
+  cssFiles, rootPath, team
+}) %>
+
+<main id="main-content">
+
+  <!-- VEHICLE HERO -->
+  <section class="vehicle-hero" aria-labelledby="vehicle-hero-heading">
+    <div class="container vehicle-hero__inner">
+      <span class="vehicle-hero__tag"><%= vehicle.vehicle.heroTag %></span>
+      <h1 class="vehicle-hero__title" id="vehicle-hero-heading">
+        <em><%= vehicle.vehicle.name %></em>
+      </h1>
+      <p class="vehicle-hero__sub"><%= vehicle.vehicle.subtitle %></p>
+      <div class="vehicle-hero__stats" aria-label="Key specifications">
+        <% vehicle.vehicle.heroStats.forEach(function(stat, i) { %>
+        <div class="vh-stat">
+          <span class="vh-stat__value"><%= stat.value %></span>
+          <span class="vh-stat__label"><%= stat.label %></span>
+        </div>
+        <% if (i < vehicle.vehicle.heroStats.length - 1) { %>
+        <div class="vh-stat-divider" aria-hidden="true"></div>
+        <% } %>
+        <% }); %>
+      </div>
+      <div>
+        <a href="#specs" class="btn btn--orange">View Specs</a>
+        <a href="<%= rootPath %>contact.html" class="btn btn--outline-white" style="margin-left: 1rem;">Contact Team</a>
+      </div>
+    </div>
+    <img src="<%= rootPath %>assets/drone_front.webp" alt="<%= vehicle.vehicle.name %> aircraft" class="vehicle-hero__image" loading="eager">
+  </section>
+
+  <!-- GALLERY -->
+  <section class="gallery-section" aria-labelledby="gallery-heading">
+    <div class="container">
+      <div class="section__header">
+        <h2 class="section__title" id="gallery-heading">Gallery</h2>
+      </div>
+      <div class="gallery-grid">
+        <% vehicle.vehicle.gallery.forEach(function(item, i) { %>
+        <div class="gallery-item">
+          <% if (item.type === 'video') { %>
+          <video class="gallery-item__video" src="<%= rootPath %><%= item.src %>" poster="<%= rootPath %><%= item.poster %>" muted loop playsinline preload="none" aria-label="<%= item.alt %>"></video>
+          <% } else { %>
+          <img src="<%= rootPath %><%= item.src %>" alt="<%= item.alt %>" loading="lazy">
+          <% } %>
+          <figcaption class="gallery-item__caption"><%= item.caption %></figcaption>
+        </div>
+        <% }); %>
+      </div>
+    </div>
+  </section>
+
+  <!-- SPECIFICATIONS -->
+  <section class="section section--alt" id="specs" aria-labelledby="specs-heading">
+    <div class="container">
+      <div class="section__header">
+        <h2 class="section__title" id="specs-heading">Technical Specifications</h2>
+        <p class="section__desc">Complete technical parameters for the <%= vehicle.vehicle.name %>.</p>
+      </div>
+      <div class="specs-layout">
+        <% vehicle.vehicle.specTables.forEach(function(table) { %>
+        <div>
+          <div class="specs-table-wrap">
+            <div class="specs-table-head">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <% if (table.iconType === 'grid') { %>
+                <rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/>
+                <% } else if (table.iconType === 'clock') { %>
+                <circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/>
+                <% } else if (table.iconType === 'briefcase') { %>
+                <rect x="2" y="7" width="20" height="14" rx="2" ry="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/>
+                <% } else { %>
+                <polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/>
+                <% } %>
+              </svg>
+              <h3><%- table.title %></h3>
+            </div>
+            <table class="specs-table" aria-label="<%= table.ariaLabel %>">
+              <tbody>
+                <% table.rows.forEach(function(row) { %>
+                <tr>
+                  <th scope="row"><%= row.label %></th>
+                  <td><% if (row.bold) { %><strong><%= row.value %></strong><% if (row.suffix) { %><span style="font-weight: 400; color: var(--muted); font-size: 0.8rem;"><%= row.suffix %></span><% } %><% } else { %><%= row.value %><% } %></td>
+                </tr>
+                <% }); %>
+              </tbody>
+            </table>
+          </div>
+        </div>
+        <% }); %>
+      </div>
+    </div>
+  </section>
+
+  <!-- PERFORMANCE -->
+  <section class="perf-section" aria-labelledby="perf-heading">
+    <div class="container">
+      <div class="section__header" style="--section-header-color: rgba(255,255,255,0.6);">
+        <h2 class="section__title" id="perf-heading" style="color: var(--white);">Performance Metrics</h2>
+      </div>
+      <div class="perf-grid">
+        <div>
+          <% vehicle.vehicle.performanceMetrics.forEach(function(metric) { %>
+          <div class="perf-metric">
+            <div class="perf-metric__header">
+              <span class="perf-metric__label"><%= metric.label %></span>
+              <span class="perf-metric__value"><%= metric.value %></span>
+            </div>
+            <div class="perf-bar" role="progressbar" aria-valuenow="<%= metric.pct %>" aria-valuemin="0" aria-valuemax="100" aria-label="<%= metric.label %>: <%= metric.value %>">
+              <div class="perf-bar__fill" data-pct="<%= metric.pct %>" style="width: <%= metric.pct %>%"></div>
+            </div>
+          </div>
+          <% }); %>
+        </div>
+        <div class="perf-info">
+          <p class="perf-info__label"><%= vehicle.vehicle.performanceInfo.label %></p>
+          <h3 class="perf-info__title"><%- vehicle.vehicle.performanceInfo.title %></h3>
+          <p class="perf-info__desc"><%= vehicle.vehicle.performanceInfo.desc %></p>
+          <div class="perf-highlight" aria-label="Performance highlights">
+            <% vehicle.vehicle.performanceHighlights.forEach(function(h) { %>
+            <div class="perf-highlight-item">
+              <span class="perf-highlight-item__num"><%= h.num %></span>
+              <span class="perf-highlight-item__label"><%= h.label %></span>
+            </div>
+            <% }); %>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SUBSYSTEMS -->
+  <section class="section" id="avionics" aria-labelledby="subsystems-heading">
+    <div class="container">
+      <div class="section__header">
+        <h2 class="section__title" id="subsystems-heading">Subsystem Documentation</h2>
+        <p class="section__desc">Detailed descriptions of each subsystem design decision and implementation.</p>
+      </div>
+      <div class="subsystems-grid">
+        <% vehicle.vehicle.subsystems.forEach(function(subsystem) { %>
+        <div class="subsystem-card reveal">
+          <div class="subsystem-card__icon subsystem-card__icon--<%= subsystem.iconVariant %>" aria-hidden="true">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <% if (subsystem.iconType === 'layers') { %>
+              <polygon points="12 2 2 7 12 12 22 7 12 2"/><polyline points="2 17 12 22 22 17"/><polyline points="2 12 12 17 22 12"/>
+              <% } else if (subsystem.iconType === 'wrench') { %>
+              <path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/>
+              <% } else if (subsystem.iconType === 'pulse') { %>
+              <polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/>
+              <% } else if (subsystem.iconType === 'monitor') { %>
+              <rect x="2" y="3" width="20" height="14" rx="2" ry="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/>
+              <% } else if (subsystem.iconType === 'package') { %>
+              <line x1="16.5" y1="9.4" x2="7.5" y2="4.21"/><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/><polyline points="3.27 6.96 12 12.01 20.73 6.96"/><line x1="12" y1="22.08" x2="12" y2="12"/>
+              <% } else { %>
+              <rect x="2" y="7" width="20" height="14" rx="2" ry="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/>
+              <% } %>
+            </svg>
+          </div>
+          <h3 class="subsystem-card__title"><%- subsystem.title %></h3>
+          <p class="subsystem-card__desc"><%= subsystem.desc %></p>
+          <span class="subsystem-card__tag subsystem-card__tag--<%= subsystem.tagVariant %>"><%= subsystem.tag %></span>
+        </div>
+        <% }); %>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<%- include('../components/footer', { rootPath, team }) %>
+<script defer src="<%= rootPath %>js/main.js"></script>
+</body>
+</html>
+

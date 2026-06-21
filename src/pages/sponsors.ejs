@@ -1,0 +1,88 @@
+﻿<%- include('../components/header', {
+  title: 'Sponsors',
+  description: 'Industry 4.0 Aerospace is supported by leading aerospace and technology companies. Meet our sponsors and learn how to partner with us.',
+  pageClass: 'page-sponsors',
+  currentPage: 'sponsors',
+  cssFiles, rootPath, team
+}) %>
+
+<main id="main-content">
+
+  <div class="page-hero">
+    <div class="container">
+      <nav class="breadcrumb" aria-label="Breadcrumb">
+        <a href="<%= rootPath %>index.html">Home</a>
+        <span aria-hidden="true">&rsaquo;</span>
+        <span aria-current="page">Sponsors</span>
+      </nav>
+      <h1 class="page-hero__title">Our Sponsors</h1>
+      <p class="page-hero__desc">Industry partnerships that make autonomous flight research possible.</p>
+    </div>
+    <div class="divider-bar" aria-hidden="true"></div>
+  </div>
+
+  <!-- SPONSOR TIERS -->
+  <section class="section" aria-labelledby="sponsors-heading">
+    <div class="container">
+      <div class="section__header">
+        <h2 class="section__title" id="sponsors-heading">Our Partners</h2>
+        <p class="section__desc">These organizations provide the hardware, materials, software, and financial support that make the Raptor-VII programme possible.</p>
+      </div>
+
+      <% sponsors.tiers.forEach(function(tier) { %>
+      <div class="tier-section">
+        <div class="tier-label-wrap" aria-label="<%= tier.name %>">
+          <span class="tier-label <%= tier.labelClass %>"><%= tier.name %></span>
+        </div>
+        <div class="<%= tier.gridClass %>">
+          <% tier.sponsors.forEach(function(sponsor) { %>
+          <%- include('../components/sponsor-card', { sponsor }) %>
+          <% }); %>
+        </div>
+      </div>
+      <% }); %>
+
+    </div>
+  </section>
+
+  <!-- IMPACT STATS -->
+  <section class="section section--alt" aria-labelledby="impact-heading">
+    <div class="container">
+      <div class="section__header">
+        <h2 class="section__title" id="impact-heading">Sponsor Impact</h2>
+        <p class="section__desc">What your support enables.</p>
+      </div>
+      <div class="impact-grid">
+        <% achievements.impactCards.forEach(function(card) { %>
+        <div class="impact-card reveal">
+          <div class="impact-card__icon" aria-hidden="true"><%= card.icon %></div>
+          <span class="impact-card__num"><%= card.num %></span>
+          <p class="impact-card__label"><%= card.label %></p>
+        </div>
+        <% }); %>
+      </div>
+    </div>
+  </section>
+
+  <!-- BECOME A SPONSOR CTA -->
+  <section class="section" aria-labelledby="cta-heading">
+    <div class="container">
+      <div class="sponsor-cta">
+        <p class="sponsor-cta__label">Partner With Us</p>
+        <h2 class="sponsor-cta__title" id="cta-heading">Become a Sponsor</h2>
+        <p class=”sponsor-cta__desc”>Support the next generation of aerospace engineers. Sponsorship opportunities are available at all levels &mdash; hardware, materials, software licenses, or financial contributions.</p>
+        <div class="sponsor-cta__actions">
+          <a href="<%= rootPath %>contact.html" class="btn btn--orange">Get in Touch</a>
+          <a href="mailto:<%= team.email %>" class="btn btn--outline-white">Email Us Directly</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<%- include('../components/footer', { rootPath, team }) %>
+<script defer src="<%= rootPath %>js/main.js"></script>
+</body>
+</html>
+

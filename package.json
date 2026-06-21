@@ -1,0 +1,15 @@
+{
+  "name": "saus-website",
+  "version": "1.0.0",
+  "description": "Industry 4.0 Aerospace — SUAS 2026 competition website",
+  "private": true,
+  "scripts": {
+    "build": "node build.js",
+    "start": "node build.js && npx serve dist",
+    "clean": "node -e \"require('fs-extra').removeSync('dist')\""
+  },
+  "dependencies": {
+    "ejs": "^3.1.10",
+    "fs-extra": "^11.2.0"
+  }
+}

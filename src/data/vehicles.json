@@ -1,0 +1,180 @@
+{
+  "vehicle": {
+    "name": "I4A Raptor-VII",
+    "generation": "Seventh-generation",
+    "season": "SUAS 2026",
+    "tagline": "2026 Competition Platform",
+    "heroTag": "2026 Competition Platform",
+    "subtitle": "Seventh-generation fixed-wing autonomous aircraft. Carbon fiber composite airframe, ArduPilot guidance, and a precision ODLC imaging payload system.",
+    "heroStats": [
+      { "value": "185cm", "label": "Wingspan" },
+      { "value": "4.85kg", "label": "MTOW" },
+      { "value": "48min", "label": "Endurance" },
+      { "value": "18m/s", "label": "Cruise Speed" },
+      { "value": "1.2kg", "label": "Payload Cap." }
+    ],
+    "previewSpecs": [
+      { "value": "185cm", "label": "Wingspan" },
+      { "value": "48min", "label": "Endurance" },
+      { "value": "18m/s", "label": "Cruise Speed" }
+    ],
+    "previewDesc": "Our seventh-generation competition aircraft is our most capable platform yet. Built from carbon fiber composite with an 185 cm wingspan, the Raptor-VII carries a custom ODLC payload and can execute fully autonomous missions with sub-metre waypoint accuracy.",
+    "specTables": [
+      {
+        "id": "dimensions",
+        "title": "Dimensions &amp; Mass",
+        "iconType": "grid",
+        "ariaLabel": "Raptor-VII dimensions and mass",
+        "rows": [
+          { "label": "Configuration",      "value": "Fixed-wing pusher",     "bold": true },
+          { "label": "Wingspan",           "value": "185 cm",                "bold": true },
+          { "label": "Fuselage Length",    "value": "112 cm",                "bold": true },
+          { "label": "Height (landing)",   "value": "38 cm",                 "bold": true },
+          { "label": "Max Takeoff Weight", "value": "4.85 kg",               "bold": true },
+          { "label": "Empty Weight",       "value": "2.40 kg",               "bold": true },
+          { "label": "Payload Capacity",   "value": "1.20 kg",               "bold": true },
+          { "label": "Wing Loading",       "value": "18.4 N/m²",        "bold": true }
+        ]
+      },
+      {
+        "id": "performance",
+        "title": "Flight Performance",
+        "iconType": "clock",
+        "ariaLabel": "Raptor-VII flight performance",
+        "rows": [
+          { "label": "Cruise Speed",       "value": "18 m/s",   "suffix": " (65 km/h)",  "bold": true },
+          { "label": "Max Speed",          "value": "28 m/s",   "suffix": " (101 km/h)", "bold": true },
+          { "label": "Stall Speed",        "value": "10.5 m/s",                           "bold": true },
+          { "label": "Endurance (cruise)", "value": "48 minutes",                         "bold": true },
+          { "label": "Max Range",          "value": "22 km",                              "bold": true },
+          { "label": "Service Ceiling",    "value": "400 m AGL",                          "bold": true },
+          { "label": "Climb Rate",         "value": "4.2 m/s",                            "bold": true },
+          { "label": "Turn Radius (cruise)","value": "28 m",                              "bold": true }
+        ]
+      },
+      {
+        "id": "propulsion",
+        "title": "Propulsion System",
+        "iconType": "briefcase",
+        "ariaLabel": "Raptor-VII propulsion",
+        "rows": [
+          { "label": "Motor",                 "value": "T-Motor MN505-S 320KV",  "bold": true },
+          { "label": "Propeller",             "value": "18×6\" CF folding", "bold": true },
+          { "label": "ESC",                   "value": "T-Motor Flame 60A",      "bold": true },
+          { "label": "Battery 1",             "value": "6S 6,000 mAh LiPo",     "bold": true },
+          { "label": "Battery 2",             "value": "6S 6,000 mAh LiPo",     "bold": true },
+          { "label": "Max Throttle Current",  "value": "42 A",                   "bold": true },
+          { "label": "Static Thrust",         "value": "68 N",                   "bold": true }
+        ]
+      },
+      {
+        "id": "avionics",
+        "title": "Avionics &amp; Sensors",
+        "iconType": "pulse",
+        "ariaLabel": "Raptor-VII avionics",
+        "rows": [
+          { "label": "Flight Controller", "value": "Cube Orange+",             "bold": true },
+          { "label": "Autopilot",         "value": "ArduPilot Plane 4.4.4",   "bold": true },
+          { "label": "GPS",               "value": "Here3+ RTK",              "bold": true },
+          { "label": "Airspeed",          "value": "MS4525DO digital",        "bold": true },
+          { "label": "Telemetry",         "value": "RFD900x 900 MHz",         "bold": true },
+          { "label": "Imaging Camera",    "value": "Sony IMX477 12MP",        "bold": true },
+          { "label": "Compute (ODLC)",    "value": "Jetson Orin Nano 8GB",    "bold": true },
+          { "label": "RC Link",           "value": "ExpressLRS 2.4 GHz",      "bold": true }
+        ]
+      }
+    ],
+    "performanceInfo": {
+      "label": "Flight Performance",
+      "title": "Built to Fly<br>Long and Precise",
+      "desc": "Every design decision on the Raptor-VII was optimized for the SUAS mission profile — extended loiter time, precise waypoint tracking, and stable imaging during ODLC passes."
+    },
+    "performanceMetrics": [
+      { "label": "Endurance",              "value": "48 min / 60 target",    "pct": 80 },
+      { "label": "Cruise Speed",           "value": "18 m/s",                "pct": 64 },
+      { "label": "Waypoint CEP Accuracy",  "value": "0.8 m",                 "pct": 92 },
+      { "label": "ODLC Detection Accuracy","value": "94%",                   "pct": 94 },
+      { "label": "Payload Drop CEP",       "value": "2.5 m @ 40m AGL",       "pct": 88 },
+      { "label": "Airframe Weight Budget", "value": "2.40 kg / 2.60 budget", "pct": 92 }
+    ],
+    "performanceHighlights": [
+      { "num": "0.8m", "label": "CEP Waypoint" },
+      { "num": "94%",  "label": "ODLC Accuracy" },
+      { "num": "2.5m", "label": "Drop CEP" }
+    ],
+    "subsystems": [
+      {
+        "title": "Airframe &amp; Structure",
+        "iconType": "layers",
+        "iconVariant": "blue",
+        "tag": "CF / Kevlar Composite",
+        "tagVariant": "blue",
+        "desc": "The Raptor-VII fuselage is built from a 3-layer carbon fiber/Kevlar monocoque construction, hand-laid over a CNC-machined foam male mold. The wing uses a modified NACA 4415 airfoil profile optimized in XFLR5 for the aircraft's operating Reynolds number range. Quick-release wing attachment uses dual 8mm carbon tubes with machined aluminum couplers and positive-locking pins."
+      },
+      {
+        "title": "Propulsion System",
+        "iconType": "wrench",
+        "iconVariant": "orange",
+        "tag": "T-Motor MN505-S",
+        "tagVariant": "orange",
+        "desc": "The pusher motor configuration keeps the nose clear for unobstructed forward camera views during ODLC passes. The T-Motor MN505-S delivers 68 N static thrust on a 6S dual-battery system. A folding propeller minimizes drag during glide phases, improving endurance by approximately 14% versus a fixed prop in wind-tunnel-correlated CFD analysis."
+      },
+      {
+        "title": "Avionics &amp; Autopilot",
+        "iconType": "pulse",
+        "iconVariant": "blue",
+        "tag": "ArduPilot / Cube Orange+",
+        "tagVariant": "blue",
+        "desc": "The Cube Orange+ flight controller runs ArduPilot Plane 4.4.4 with custom EKF3 tuning for the Raptor-VII's flight dynamics. Here3+ RTK GPS provides centimetre-level position accuracy when paired with our portable base station. All parameters are version-controlled in a Git repository and loaded via a validated configuration script before every flight."
+      },
+      {
+        "title": "ODLC Imaging System",
+        "iconType": "monitor",
+        "iconVariant": "orange",
+        "tag": "YOLOv8 / Jetson Orin",
+        "tagVariant": "orange",
+        "desc": "A Sony IMX477 12MP sensor captures 4032×3024 images at 4 fps during ODLC passes. The Jetson Orin Nano runs a YOLOv8-based detection pipeline that classifies shape, letter, colour, and background colour in under 80 ms per image. Geolocation computes target GPS coordinates from the camera's pixel position using RTK-corrected aircraft position and gimbal angle data."
+      },
+      {
+        "title": "Payload Delivery",
+        "iconType": "package",
+        "iconVariant": "blue",
+        "tag": "Servo-actuated / 2.5m CEP",
+        "tagVariant": "blue",
+        "desc": "The payload bay accommodates a single 0.5 kg standardized bottle. A servo-driven release mechanism with redundant mechanical failsafe drops the payload at the computed release point, accounting for aircraft speed, altitude, and wind. A custom ballistic trajectory model achieves 2.5 m CEP at 40 m AGL in winds up to 8 m/s."
+      },
+      {
+        "title": "Power System",
+        "iconType": "briefcase",
+        "iconVariant": "orange",
+        "tag": "Custom PDB / Dual 6S",
+        "tagVariant": "orange",
+        "desc": "A custom power distribution board (KiCad-designed, JLCPCB-fabricated) manages dual 6S LiPo inputs with bus arbitration, overcurrent protection, and per-rail voltage/current monitoring. A 12 V regulated rail powers avionics; a 5 V rail powers compute and cameras. All battery cells are logged to 10 Hz in ArduPilot telemetry for post-flight health analysis."
+      }
+    ],
+    "gallery": [
+      {
+        "type": "image",
+        "src": "assets/drone_front.webp",
+        "alt": "Raptor-VII front view — landing gear, pusher motor mount, and payload bay door",
+        "caption": "Front view — payload bay and propulsion system",
+        "gridClass": ""
+      },
+      {
+        "type": "video",
+        "src": "assets/flying_drone.mp4",
+        "poster": "assets/drone_front.webp",
+        "alt": "Raptor-VII autonomous flight demonstration",
+        "caption": "Autonomous flight test — Meridian Airfield, Feb 2026",
+        "gridClass": ""
+      },
+      {
+        "type": "image",
+        "src": "assets/drone_front.webp",
+        "alt": "Raptor-VII three-quarter view showing wing configuration and camera gimbal",
+        "caption": "Three-quarter view — wing and gimbal system",
+        "gridClass": ""
+      }
+    ]
+  }
+}

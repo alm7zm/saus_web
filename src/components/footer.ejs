@@ -1,0 +1,50 @@
+<footer class="site-footer" role="contentinfo">
+  <div class="container">
+    <div class="footer__grid">
+      <div class="footer__brand">
+        <a href="<%= rootPath %>index.html" class="footer__logo-link" aria-label="<%= team.teamName %> home">
+          <img src="<%= rootPath %>assets/team_logo.jpeg" alt="<%= team.teamName %> logo" class="footer__logo" width="48" height="48">
+          <span class="footer__brand-name"><%= team.teamName %></span>
+        </a>
+        <p class="footer__brand-desc"><%= team.university %> · <%= team.season %></p>
+        <p class="footer__location">📍 <%= team.location %></p>
+      </div>
+
+      <div class="footer__col">
+        <h3 class="footer__heading">Navigation</h3>
+        <ul class="footer__links" role="list">
+          <li><a href="<%= rootPath %>index.html">Home</a></li>
+          <li><a href="<%= rootPath %>vehicle.html">Vehicle</a></li>
+          <li><a href="<%= rootPath %>team.html">Team</a></li>
+          <li><a href="<%= rootPath %>blog.html">Blog</a></li>
+          <li><a href="<%= rootPath %>sponsors.html">Sponsors</a></li>
+          <li><a href="<%= rootPath %>contact.html">Contact</a></li>
+        </ul>
+      </div>
+
+      <div class="footer__col">
+        <h3 class="footer__heading">Team</h3>
+        <ul class="footer__links" role="list">
+          <% team.members.slice(0,4).forEach(m => { %>
+          <li><a href="<%= rootPath %>team/<%= m.slug %>.html"><%= m.name %></a></li>
+          <% }) %>
+          <li><a href="<%= rootPath %>team.html">View all →</a></li>
+        </ul>
+      </div>
+
+      <div class="footer__col">
+        <h3 class="footer__heading">Contact</h3>
+        <ul class="footer__links" role="list">
+          <li><a href="mailto:<%= team.email %>"><%= team.email %></a></li>
+          <li><a href="<%= rootPath %>sponsors.html">Become a Sponsor</a></li>
+          <li><a href="<%= rootPath %>contact.html">Get in Touch</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="footer__bottom">
+      <p class="footer__copy">© <span id="footer-year">2026</span> <%= team.teamName %>, <%= team.university %>. All rights reserved.</p>
+      <p class="footer__legal">Built for SUAS 2026 competition.</p>
+    </div>
+  </div>
+</footer>

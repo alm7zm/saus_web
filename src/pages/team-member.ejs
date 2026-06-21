@@ -1,0 +1,80 @@
+﻿<%- include('../components/header', {
+  title: member.name,
+  description: member.role + ' at Industry 4.0 Aerospace, ' + team.university + '. ' + member.bio,
+  pageClass: 'page-team-member',
+  currentPage: 'team',
+  cssFiles, rootPath, team
+}) %>
+
+<main id="main-content">
+
+  <div class="page-hero">
+    <div class="container">
+      <nav class="breadcrumb" aria-label="Breadcrumb">
+        <a href="<%= rootPath %>index.html">Home</a>
+        <span aria-hidden="true">&rsaquo;</span>
+        <a href="<%= rootPath %>team.html">Team</a>
+        <span aria-hidden="true">&rsaquo;</span>
+        <span aria-current="page"><%= member.name %></span>
+      </nav>
+    </div>
+    <div class="divider-bar" aria-hidden="true"></div>
+  </div>
+
+  <section class="section" aria-labelledby="member-name">
+    <div class="container">
+      <div class="profile-layout">
+
+        <!-- AVATAR -->
+        <div>
+          <div class="profile-avatar profile-avatar--<%= member.avatarColor %>" aria-hidden="true">
+            <span><%= member.initials %></span>
+          </div>
+        </div>
+
+        <!-- INFO -->
+        <div>
+          <span class="badge badge--<%= member.badgeVariant || 'blue' %>" style="margin-bottom: 1rem; display: inline-block;"><%= member.role %></span>
+          <h1 class="profile-name" id="member-name"><%= member.name %></h1>
+          <p class="profile-meta"><%= member.department %> &middot; <%= member.year %> &middot; <a href="mailto:<%= member.email %>"><%= member.email %></a></p>
+
+          <div class="profile-section">
+            <h2 class="profile-section-title">About</h2>
+            <p class="profile-bio"><%= member.bio %></p>
+          </div>
+
+          <div class="profile-section">
+            <h2 class="profile-section-title">Key Contributions</h2>
+            <ul class="profile-contributions">
+              <% member.contributions.forEach(function(c) { %>
+              <li><%= c %></li>
+              <% }); %>
+            </ul>
+          </div>
+
+          <div class="profile-section">
+            <h2 class="profile-section-title">Background</h2>
+            <p class="profile-bio"><%= member.background %></p>
+          </div>
+
+          <div class="profile-section">
+            <h2 class="profile-section-title">Contact</h2>
+            <p class="profile-bio"><a href="mailto:<%= member.email %>" class="btn btn--outline-blue">Email <%= member.name.split(' ')[0] %></a></p>
+          </div>
+
+          <div style="margin-top: 2rem; padding-top: 2rem; border-top: 1px solid var(--border);">
+            <a href="<%= rootPath %>team.html" class="btn btn--outline-blue">&larr; Back to Team</a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<%- include('../components/footer', { rootPath, team }) %>
+<script defer src="<%= rootPath %>js/main.js"></script>
+</body>
+</html>
+

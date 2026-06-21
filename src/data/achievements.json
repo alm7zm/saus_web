@@ -1,0 +1,21 @@
+{
+  "stats": [
+    { "num": "4", "suffix": "+", "label": "Years Active" },
+    { "num": "1", "suffix": "K+", "label": "Flight Hours" },
+    { "num": "8", "suffix": "",  "label": "Team Members" },
+    { "num": "5", "suffix": "",  "label": "Industry Sponsors" }
+  ],
+  "competition": {
+    "name": "AUVSI SUAS 2026",
+    "shortLabel": "AUVSI SUAS 2026",
+    "location": "Patuxent River NAS, Maryland",
+    "description": "The AUVSI Student Unmanned Aerial Systems competition evaluates autonomous UAV performance across obstacle avoidance, object detection, payload delivery, and mission execution. We compete against over 80 teams worldwide.",
+    "globalCompetitors": "80+"
+  },
+  "impactCards": [
+    { "icon": "✈️", "num": "8",   "label": "Engineers Trained Annually" },
+    { "icon": "🔬", "num": "24+", "label": "Autonomous Flights Completed" },
+    { "icon": "🏆", "num": "4",   "label": "Competition Seasons" },
+    { "icon": "🌍", "num": "80+", "label": "Global Competitors" }
+  ]
+}

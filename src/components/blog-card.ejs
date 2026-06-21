@@ -1,0 +1,30 @@
+<article class="post-card<%= post.featured ? ' post-card--featured' : '' %> reveal" data-category="<%= post.category.toLowerCase() %>">
+  <div class="post-card__media">
+    <% if (post.mediaType === 'video') { %>
+    <video src="<%= rootPath %><%= post.mediaSrc %>" poster="<%= rootPath %><%= post.mediaPoster %>" muted loop playsinline preload="none" aria-label="<%= post.title %> preview video"></video>
+    <% } else { %>
+    <img src="<%= rootPath %><%= post.mediaSrc %>" alt="<%= post.title %>" loading="lazy">
+    <% } %>
+    <div class="post-card__category-strip">
+      <span class="badge cat-<%= post.category.toLowerCase() %>"><%= post.category %></span>
+    </div>
+  </div>
+  <div class="post-card__body">
+    <div class="post-card__meta">
+      <time class="post-card__date" datetime="<%= post.date %>"><%= post.dateFormatted %></time>
+      <span class="post-card__author">
+        <span class="post-card__author-dot" aria-hidden="true"></span>
+        <%= post.authors[0] %>
+      </span>
+    </div>
+    <h<%= post.featured ? '2' : '3' %> class="post-card__title"><%= post.title %></h<%= post.featured ? '2' : '3' %>>
+    <p class="post-card__excerpt"><%= post.excerpt %></p>
+    <div class="post-card__footer">
+      <span class="post-card__read-time">⏱ <%= post.readTime %></span>
+      <a href="<%= rootPath %>blog/<%= post.slug %>.html" class="post-card__link" aria-label="Read: <%= post.title %>">
+        Read Post
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+      </a>
+    </div>
+  </div>
+</article>

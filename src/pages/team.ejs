@@ -1,0 +1,88 @@
+﻿<%- include('../components/header', {
+  title: 'Team',
+  description: 'Meet the Industry 4.0 Aerospace team &mdash; eight engineers from Meridian Institute of Technology designing and flying autonomous UAVs.',
+  pageClass: 'page-team',
+  currentPage: 'team',
+  cssFiles, rootPath, team
+}) %>
+
+<main id="main-content">
+
+  <div class="page-hero">
+    <div class="container">
+      <nav class="breadcrumb" aria-label="Breadcrumb">
+        <a href="<%= rootPath %>index.html">Home</a>
+        <span aria-hidden="true">&rsaquo;</span>
+        <span aria-current="page">Team</span>
+      </nav>
+      <h1 class="page-hero__title">Our Team</h1>
+      <p class="page-hero__desc">Eight engineers. One competition season. Endless iterations.</p>
+    </div>
+    <div class="divider-bar" aria-hidden="true"></div>
+  </div>
+
+  <!-- GROUP PHOTO -->
+  <section class="group-photo-section" aria-label="Team group photo">
+    <div class="container">
+      <figure class="group-photo-wrap">
+        <img src=”<%= rootPath %>assets/team.jpeg” alt=”Industry 4.0 Aerospace team &mdash; all eight members and faculty advisor” loading=”lazy”>
+        <figcaption class="group-photo-caption">
+          <span><strong><%= team.teamName %></strong> &middot; <%= team.university %> &middot; <%= team.season %></span>
+        </figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <!-- FACULTY ADVISOR -->
+  <section class="section" aria-labelledby="advisor-heading">
+    <div class="container">
+      <div class="section__header">
+        <h2 class="section__title" id="advisor-heading">Faculty Advisor</h2>
+      </div>
+      <div class="advisor-card">
+        <div class="advisor-card__avatar" aria-hidden="true">
+          <span><%= team.facultyAdvisor.initials || 'AK' %></span>
+        </div>
+        <div class="advisor-card__info">
+          <p class="advisor-card__label"><%= team.facultyAdvisor.title %></p>
+          <h3 class="advisor-card__name"><%= team.facultyAdvisor.name %></h3>
+          <p class="advisor-card__dept"><%= team.facultyAdvisor.department %> &middot; <%= team.university %></p>
+          <p class="advisor-card__desc"><%= team.facultyAdvisor.bio || 'Providing academic oversight and technical mentorship to the team across all engineering disciplines.' %></p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- MEMBER GRID -->
+  <section class="section section--alt" aria-labelledby="members-heading">
+    <div class="container">
+      <div class="section__header">
+        <h2 class="section__title" id="members-heading">Team Members</h2>
+        <p class="section__desc">Click "View Details" on any card to see individual contributions and background.</p>
+      </div>
+      <div class="members-grid">
+        <% team.members.forEach(function(member) { %>
+        <%- include('../components/team-card', { member }) %>
+        <% }); %>
+      </div>
+    </div>
+  </section>
+
+  <!-- JOIN CTA -->
+  <section class="join-cta" aria-labelledby="join-heading">
+    <div class="container">
+      <div class="join-cta__inner">
+        <h2 class="join-cta__title" id="join-heading">Interested in Joining?</h2>
+        <p class=”join-cta__desc”>We welcome passionate engineers from any discipline. If you want to design, build, and fly autonomous aircraft &mdash; reach out.</p>
+        <a href="<%= rootPath %>contact.html" class="btn btn--orange">Get in Touch</a>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<%- include('../components/footer', { rootPath, team }) %>
+<script defer src="<%= rootPath %>js/main.js"></script>
+</body>
+</html>
+

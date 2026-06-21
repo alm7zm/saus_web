@@ -1,0 +1,1 @@
+Websites compared: [https://uavforge.eng.uci.edu](https://uavforge.eng.uci.edu) (First place) [https://bronco-astra.com](https://bronco-astra.com) (Tied for second) [https://[www.purauav.com.tr/index.html](https://www.purauav.com.tr/index.html](https://www.purauav.com.tr/index.html](https://www.purauav.com.tr/index.html)) (Tied for second)

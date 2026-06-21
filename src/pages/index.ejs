@@ -1,0 +1,160 @@
+﻿<%- include('../components/header', {
+  title: 'Home',
+  description: 'Industry 4.0 Aerospace &mdash; Meridian Institute of Technology\'s autonomous UAV competition team. Competing at AUVSI SUAS 2026.',
+  pageClass: 'page-home',
+  currentPage: 'home',
+  cssFiles, rootPath, team
+}) %>
+
+<main id="main-content">
+
+  <!-- HERO -->
+  <section class="hero" aria-label="Hero">
+    <div class="hero__video-wrap" aria-hidden="true">
+      <video class="hero__video" autoplay muted loop playsinline preload="auto" aria-hidden="true">
+        <source src="<%= rootPath %>assets/flying_drone.mp4" type="video/mp4">
+      </video>
+    </div>
+    <div class="hero__overlay" aria-hidden="true"></div>
+    <div class="hero__grid-lines" aria-hidden="true"></div>
+
+    <div class="container">
+      <div class="hero__content">
+        <div class="hero__tag" aria-label="Current season">
+          <span class="hero__tag-dot" aria-hidden="true"></span>
+          <%= achievements.competition.shortLabel %>
+        </div>
+        <h1 class="hero__title">
+          <span class="hero__title-accent"><%= team.teamName %></span>
+        </h1>
+        <p class="hero__subtitle-line"><%= team.university %></p>
+        <p class=”hero__desc”>Designing, building, and flying fully autonomous fixed-wing aircraft. We compete at the AUVSI Student Unmanned Aerial Systems competition &mdash; pushing the limits of autonomous flight, computer vision, and precision payload delivery.</p>
+        <div class="hero__actions">
+          <a href="<%= rootPath %>vehicle.html" class="btn btn--orange">Our Vehicle</a>
+          <a href="<%= rootPath %>team.html" class="btn btn--outline-white">Meet the Team</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="hero__stats" aria-label="Team statistics">
+      <% achievements.stats.forEach(function(s) { %>
+      <div class="hero__stat">
+        <span class="hero__stat-num"><%= s.num %><span><%= s.suffix %></span></span>
+        <span class="hero__stat-label"><%= s.label %></span>
+      </div>
+      <% }); %>
+    </div>
+  </section>
+
+  <!-- INTRO STRIP -->
+  <section class="intro-strip" aria-label="Team introduction">
+    <div class="container">
+      <div class="intro-strip__inner">
+        <div class="intro-strip__text">
+          <p class="intro-strip__label">Who We Are</p>
+          <h2 class="intro-strip__title">Engineering <em>autonomous flight</em> from the ground up</h2>
+        </div>
+        <a href="<%= rootPath %>team.html" class="btn btn--outline-white">Meet the Team</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- OVERVIEW CARDS -->
+  <section class="section" aria-labelledby="overview-heading">
+    <div class="container">
+      <div class="section__header">
+        <h2 class="section__title" id="overview-heading">What We Do</h2>
+        <p class="section__desc">From airframe fabrication to computer vision, every subsystem is designed, built, and tested by our student engineers.</p>
+      </div>
+      <div class="overview-grid">
+        <article class="overview-card reveal">
+          <div class="overview-card__icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>
+          </div>
+          <h3 class="overview-card__title">Vehicle Design</h3>
+          <p class="overview-card__desc">Carbon fiber composite fixed-wing aircraft built from scratch. 185 cm wingspan, 4.85 kg MTOW, 48-minute endurance with a 1.2 kg payload capacity.</p>
+          <a href="<%= rootPath %>vehicle.html" class="overview-card__link">Explore Vehicle &rarr;</a>
+        </article>
+        <article class="overview-card reveal">
+          <div class="overview-card__icon overview-card__icon--orange" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M12 1v4M12 19v4M4.22 4.22l2.83 2.83M16.95 16.95l2.83 2.83M1 12h4M19 12h4M4.22 19.78l2.83-2.83M16.95 7.05l2.83-2.83"/></svg>
+          </div>
+          <h3 class="overview-card__title">Autonomous Systems</h3>
+          <p class="overview-card__desc">ArduPilot-powered autonomous navigation with YOLOv8 ODLC pipeline. 94% target classification accuracy, 0.8 m waypoint CEP.</p>
+          <a href="<%= rootPath %>vehicle.html#avionics" class="overview-card__link">View Avionics &rarr;</a>
+        </article>
+        <article class="overview-card reveal">
+          <div class="overview-card__icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+          </div>
+          <h3 class="overview-card__title">Our Team</h3>
+          <p class="overview-card__desc">Eight engineers from Aerospace, Mechanical, CS, and Electrical Engineering. Guided by Prof. Amira Khalil, faculty advisor.</p>
+          <a href="<%= rootPath %>team.html" class="overview-card__link">Meet the Team &rarr;</a>
+        </article>
+        <article class="overview-card reveal">
+          <div class="overview-card__icon overview-card__icon--orange" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>
+          </div>
+          <h3 class="overview-card__title">Build Journal</h3>
+          <p class=”overview-card__desc”>Follow our engineering process &mdash; flight test reports, design decisions, manufacturing walkthroughs, and competition updates.</p>
+          <a href="<%= rootPath %>blog.html" class="overview-card__link">Read the Blog &rarr;</a>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- VEHICLE PREVIEW -->
+  <section class="section section--alt" aria-labelledby="vehicle-preview-heading">
+    <div class="container">
+      <div class="vehicle-preview">
+        <div class="vehicle-preview__media">
+          <img src="<%= rootPath %>assets/drone_front.webp" alt="I4A Raptor-VII front view" loading="lazy">
+          <div class="vehicle-preview__badge">
+            <span class="badge badge--orange"><%= vehicle.vehicle.generation %></span>
+          </div>
+        </div>
+        <div class="vehicle-preview__info">
+          <h2 class="vehicle-preview__title" id="vehicle-preview-heading">
+            Meet the <span><%= vehicle.vehicle.name %></span>
+          </h2>
+          <p class="vehicle-preview__desc"><%= vehicle.vehicle.previewDesc %></p>
+          <div class="vehicle-preview__specs" aria-label="Key specifications">
+            <% vehicle.vehicle.previewSpecs.forEach(function(spec) { %>
+            <div class="vspec">
+              <span class="vspec__value"><%= spec.value %></span>
+              <span class="vspec__label"><%= spec.label %></span>
+            </div>
+            <% }); %>
+          </div>
+          <a href="<%= rootPath %>vehicle.html" class="btn btn--blue">Full Specifications &rarr;</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- COMPETITION STRIP -->
+  <section class="comp-strip" aria-labelledby="comp-heading">
+    <div class="container">
+      <div class="comp-strip__inner">
+        <div class="comp-strip__logo-area" aria-hidden="true">
+          <div class="comp-strip__logo-circle">
+            <img src="<%= rootPath %>assets/team_logo.jpeg" alt="">
+          </div>
+        </div>
+        <div class="comp-strip__info">
+          <p class="comp-strip__label"><%= achievements.competition.shortLabel %></p>
+          <h2 class=”comp-strip__title” id=”comp-heading”><%= achievements.competition.name %> &mdash; <%= achievements.competition.location %></h2>
+          <p class="comp-strip__desc"><%= achievements.competition.description %></p>
+        </div>
+        <a href="<%= rootPath %>contact.html" class="btn btn--outline-white">Get in Touch</a>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<%- include('../components/footer', { rootPath, team }) %>
+<script defer src="<%= rootPath %>js/main.js"></script>
+</body>
+</html>
+

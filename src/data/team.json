@@ -1,0 +1,170 @@
+{
+  "teamName": "Industry 4.0 Aerospace",
+  "university": "Meridian Institute of Technology",
+  "email": "i4a.aerospace@meridian.edu",
+  "location": "Portland, OR",
+  "season": "SUAS 2026",
+  "facultyAdvisor": {
+    "initials": "AK",
+    "name": "Prof. Amira Khalil",
+    "title": "Faculty Advisor · Professor",
+    "department": "Department of Aerospace Engineering, Meridian Institute of Technology",
+    "email": "a.khalil@meridian.edu",
+    "bio": "Professor Khalil holds a Ph.D. in Aerospace Systems from the University of Michigan and has 14 years of experience in autonomous UAV research. She joined the I4A program in its founding year and provides academic guidance, safety oversight, and connects the team with industry mentors. Her research on distributed flight control algorithms directly informs the Raptor-VII's autonomy stack."
+  },
+  "members": [
+    {
+      "name": "Omar Reyes",
+      "initials": "OR",
+      "slug": "omar-reyes",
+      "role": "Team Captain / System Lead",
+      "badgeVariant": "blue",
+      "department": "Aerospace Engineering",
+      "year": "Year 4",
+      "avatarColor": "blue",
+      "bio": "Omar leads the I4A program from project initiation to competition day. He coordinates all subsystems, manages the project schedule, and interfaces directly with competition officials and sponsors. With three previous SUAS competition cycles under his belt, Omar brings strategic experience that keeps the team focused under pressure.",
+      "contributions": [
+        "System architecture definition and subsystem interface agreements",
+        "Competition strategy and mission task prioritization for SUAS 2026",
+        "Budget management and sponsor deliverable coordination",
+        "Safety management plan authorship and regulatory compliance"
+      ],
+      "background": "Specializes in systems engineering and aircraft performance analysis. Has completed internships at Lockheed Martin and a regional UAV startup. Holds FAA Part 107 Remote Pilot Certificate.",
+      "email": "o.reyes@meridian.edu",
+      "linkedin": "https://www.linkedin.com/in/omar-reyes-aero"
+    },
+    {
+      "name": "Yasmin Volkov",
+      "initials": "YV",
+      "slug": "yasmin-volkov",
+      "role": "Mechanical Lead",
+      "badgeVariant": "blue",
+      "department": "Mechanical Engineering",
+      "year": "Year 4",
+      "avatarColor": "teal",
+      "bio": "Yasmin leads all mechanical design and fabrication for the Raptor-VII airframe. She developed the aircraft's carbon fiber monocoque fuselage and modular wing design, reducing assembly time by 40% compared to the previous season's vehicle. Her CAD work in SolidWorks and FEA simulations ensure every part meets weight and structural safety targets.",
+      "contributions": [
+        "Full airframe CAD design in SolidWorks with FEA structural validation",
+        "Carbon fiber layup manufacturing process and quality control",
+        "Modular wing-to-fuselage quick-release connection design",
+        "CG (center of gravity) analysis and ballast system design"
+      ],
+      "background": "Specializes in composite materials and structural mechanics. Completed a summer research project on automated fiber placement at the MIT Composites Lab. Proficient in SolidWorks, ANSYS Mechanical, and CATIA.",
+      "email": "y.volkov@meridian.edu"
+    },
+    {
+      "name": "Kai Nakamura",
+      "initials": "KN",
+      "slug": "kai-nakamura",
+      "role": "Electronics Lead",
+      "badgeVariant": "orange",
+      "department": "Electrical Engineering",
+      "year": "Year 3",
+      "avatarColor": "orange",
+      "bio": "Kai designs and integrates the entire electrical architecture of the Raptor-VII. From power distribution boards to sensor wiring harnesses, he ensures every electronic system operates reliably under flight conditions. He designed a custom power module that provides clean 5V and 12V rails from dual 6S LiPo batteries with overcurrent protection and telemetry feedback.",
+      "contributions": [
+        "Custom power distribution PCB design (KiCad) with dual battery management",
+        "Sensor integration: GPS RTK, IMU, barometer, airspeed, current monitor",
+        "Telemetry system wiring and frequency management",
+        "EMI/RFI mitigation strategy for camera and RF coexistence"
+      ],
+      "background": "Specializes in embedded systems and power electronics. Completed internship at Honeywell Aerospace working on flight control electronics. Proficient in KiCad, Altium, LTSpice, and STM32 firmware development.",
+      "email": "k.nakamura@meridian.edu"
+    },
+    {
+      "name": "Dania Osei",
+      "initials": "DO",
+      "slug": "dania-osei",
+      "role": "Software Lead",
+      "badgeVariant": "blue",
+      "department": "Computer Science",
+      "year": "Year 4",
+      "avatarColor": "green",
+      "bio": "Dania architects the entire software stack — from the ArduPilot mission planner interface to the real-time ODLC (Object, Detection, Localization, and Classification) pipeline. Her YOLO-based detection model, fine-tuned on SUAS-specific target datasets, achieves 94% accuracy across all target shape and letter combinations at operational altitude.",
+      "contributions": [
+        "ODLC pipeline: YOLOv8 fine-tuning, geolocation, target submission API",
+        "Autonomous mission planner with ArduPilot MAVLINK integration",
+        "Obstacle avoidance algorithm using 3D occupancy mapping",
+        "Real-time telemetry logging and post-flight analysis tooling"
+      ],
+      "background": "Specializes in computer vision and robotics software. Published research on aerial target detection at the IEEE ICRA 2025 student symposium. Proficient in Python, C++, ROS2, PyTorch, and ArduPilot/MAVLink.",
+      "email": "d.osei@meridian.edu"
+    },
+    {
+      "name": "Luca Bernardi",
+      "initials": "LB",
+      "slug": "luca-bernardi",
+      "role": "Payload Engineer",
+      "badgeVariant": "orange",
+      "department": "Mechanical Engineering",
+      "year": "Year 3",
+      "avatarColor": "purple",
+      "bio": "Luca designs and fabricates the Raptor-VII's precision payload delivery system. His electro-mechanical drop mechanism achieves consistent release accuracy within 2.5 metres at target altitude. He also manages the integration of the camera gimbal and its vibration isolation mount, ensuring stable imaging throughout flight.",
+      "contributions": [
+        "Servo-actuated payload drop mechanism with 0-2.5m CEP at 40m AGL",
+        "3-axis brushless gimbal design and vibration damping mount",
+        "Payload bay structural design with quick-release interface",
+        "Ballistic drop calculations and targeting model development"
+      ],
+      "background": "Specializes in mechatronics and precision mechanisms. Completed a project on drone delivery systems for his university capstone design course. Proficient in SolidWorks, FDM 3D printing, and servo/stepper actuation.",
+      "email": "l.bernardi@meridian.edu"
+    },
+    {
+      "name": "Farah Mansour",
+      "initials": "FM",
+      "slug": "farah-mansour",
+      "role": "GCS Operator",
+      "badgeVariant": "blue",
+      "department": "Computer Engineering",
+      "year": "Year 3",
+      "avatarColor": "rose",
+      "bio": "Farah operates the Ground Control Station (GCS) during all test flights and at competition. She developed a custom Mission Planner dashboard overlay that consolidates telemetry, ODLC results, and interoperability data into one operator display. Her situational awareness and quick decision-making are critical assets during live competition missions.",
+      "contributions": [
+        "Custom GCS dashboard built on Mission Planner's plugin API",
+        "SUAS interoperability server integration and real-time data submission",
+        "Flight log analysis and anomaly detection pipeline",
+        "Competition rehearsal planning and checklists"
+      ],
+      "background": "Specializes in human-computer interaction and embedded Linux systems. Designed her university's Formula SAE data telemetry system before joining I4A. Holds FAA Part 107 Remote Pilot Certificate. Proficient in Python, Qt, Linux, and Mission Planner customization.",
+      "email": "f.mansour@meridian.edu"
+    },
+    {
+      "name": "Marcus Okonkwo",
+      "initials": "MO",
+      "slug": "marcus-okonkwo",
+      "role": "Integration Engineer",
+      "badgeVariant": "blue",
+      "department": "Aerospace Engineering",
+      "year": "Year 2",
+      "avatarColor": "blue",
+      "bio": "Marcus handles the critical task of systems integration — ensuring every subsystem works together as designed. He leads integration testing, documents interface specifications, and maintains the team's master assembly checklist. His methodical approach to test-and-verify workflows has prevented multiple potential field failures.",
+      "contributions": [
+        "Hardware-in-the-loop (HIL) simulation test environment setup",
+        "Subsystem interface specification document authorship",
+        "Integration test matrix development and test execution",
+        "Technical documentation, wiring diagrams, and assembly manuals"
+      ],
+      "background": "Passionate about verification and validation methodologies in aerospace. Currently completing coursework in flight mechanics and avionics systems. Proficient in MATLAB/Simulink, Python, and systems documentation tools.",
+      "email": "m.okonkwo@meridian.edu"
+    },
+    {
+      "name": "Priya Sharma",
+      "initials": "PS",
+      "slug": "priya-sharma",
+      "role": "Propulsion Engineer",
+      "badgeVariant": "orange",
+      "department": "Mechanical Engineering",
+      "year": "Year 2",
+      "avatarColor": "orange",
+      "bio": "Priya manages propulsion system selection, characterization, and testing for the Raptor-VII. She conducted motor and propeller bench testing across over 30 combinations before selecting the T-Motor MN505-S with an 18×6\" carbon propeller — achieving the best efficiency-to-thrust ratio for the aircraft's design point. She also manages battery health and storage protocols.",
+      "contributions": [
+        "Propulsion trade study: 30+ motor/propeller/battery combinations tested",
+        "Motor bench test rig design and static thrust measurement campaign",
+        "Battery safety, storage protocol, and field charging procedures",
+        "Power budget analysis and endurance optimization modeling"
+      ],
+      "background": "Currently focused on turbomachinery and propulsion coursework. Won the Meridian Engineering Society undergraduate research prize for her propulsion efficiency analysis. Proficient in MATLAB, eCalc, and motor bench testing instrumentation.",
+      "email": "p.sharma@meridian.edu"
+    }
+  ]
+}

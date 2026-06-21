@@ -1,0 +1,74 @@
+﻿<%- include('../components/header', {
+  title: post.title,
+  description: post.excerpt,
+  pageClass: 'page-blog-post',
+  currentPage: 'blog',
+  cssFiles, rootPath, team
+}) %>
+
+<main id="main-content">
+
+  <div class="page-hero">
+    <div class="container">
+      <nav class="breadcrumb" aria-label="Breadcrumb">
+        <a href="<%= rootPath %>index.html">Home</a>
+        <span aria-hidden="true">&rsaquo;</span>
+        <a href="<%= rootPath %>blog.html">Blog</a>
+        <span aria-hidden="true">&rsaquo;</span>
+        <span aria-current="page" class="breadcrumb__truncate"><%= post.title %></span>
+      </nav>
+    </div>
+    <div class="divider-bar" aria-hidden="true"></div>
+  </div>
+
+  <article class="section" aria-labelledby="post-title">
+    <div class="container" style="max-width: 860px;">
+
+      <!-- POST HEADER -->
+      <header style="margin-bottom: 2.5rem;">
+        <div style="display: flex; align-items: center; gap: 0.75rem; flex-wrap: wrap; margin-bottom: 1rem;">
+          <span class="badge <%= post.categoryClass %>"><%= post.category %></span>
+          <time datetime="<%= post.date %>" style="font-family: var(--font-heading); font-size: 0.78rem; color: var(--muted); font-weight: 600;"><%= post.dateFormatted %></time>
+          <span style="font-size: 0.78rem; color: var(--muted);">&#x23F1; <%= post.readTime %></span>
+        </div>
+        <h1 id="post-title" style="font-size: clamp(1.75rem, 4vw, 2.75rem); font-weight: 900; color: var(--charcoal); line-height: 1.2; margin-bottom: 1rem;"><%= post.title %></h1>
+        <p style="font-size: 0.9375rem; color: var(--muted);">By <%- post.authorsDisplay %></p>
+      </header>
+
+      <!-- MEDIA -->
+      <div class="post-hero-media">
+        <% if (post.mediaType === 'video') { %>
+        <video src="<%= rootPath %><%= post.mediaSrc %>" poster="<%= rootPath %><%= post.mediaPoster %>" controls preload="none" aria-label="<%= post.mediaAlt %>"></video>
+        <% } else { %>
+        <img src="<%= rootPath %><%= post.mediaSrc %>" alt="<%= post.mediaAlt %>" loading="lazy">
+        <% } %>
+      </div>
+
+      <!-- CONTENT -->
+      <div class="post-content">
+        <%- post.content %>
+      </div>
+
+      <!-- FOOTER NAV -->
+      <footer style="margin-top: 3rem; padding-top: 2rem; border-top: 1px solid var(--border); display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem;">
+        <a href="<%= rootPath %>blog.html" class="btn btn--outline-blue">&larr; Back to Blog</a>
+        <div style="display: flex; gap: 0.75rem; flex-wrap: wrap;">
+          <% if (prevPost) { %>
+          <a href="<%= rootPath %>blog/<%= prevPost.slug %>.html" class="btn btn--outline-blue" style="font-size: 0.8rem;">&larr; <%= prevPost.title.substring(0, 30) %>&hellip;</a>
+          <% } %>
+          <% if (nextPost) { %>
+          <a href="<%= rootPath %>blog/<%= nextPost.slug %>.html" class="btn btn--blue" style="font-size: 0.8rem;"><%= nextPost.title.substring(0, 30) %>&hellip; &rarr;</a>
+          <% } %>
+        </div>
+      </footer>
+
+    </div>
+  </article>
+
+</main>
+
+<%- include('../components/footer', { rootPath, team }) %>
+<script defer src="<%= rootPath %>js/main.js"></script>
+</body>
+</html>
+

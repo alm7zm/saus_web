@@ -1,0 +1,21 @@
+<header class="site-header" role="banner">
+  <nav class="nav container" aria-label="Main navigation">
+    <a class="nav__brand" href="<%= rootPath %>index.html" aria-label="<%= team.teamName %> home">
+      <img src="<%= rootPath %>assets/team_logo.jpeg" alt="<%= team.teamName %> logo" class="nav__logo" width="40" height="40">
+      <span class="nav__brand-text"><%= team.teamName %></span>
+    </a>
+
+    <button class="nav__hamburger" aria-controls="main-menu" aria-expanded="false" aria-label="Toggle navigation menu">
+      <span></span><span></span><span></span>
+    </button>
+
+    <ul class="nav__menu" id="main-menu" role="list">
+      <li><a href="<%= rootPath %>index.html"    class="nav__link<%= currentPage === 'home'     ? ' active' : '' %>" aria-current="<%= currentPage === 'home'     ? 'page' : 'false' %>">Home</a></li>
+      <li><a href="<%= rootPath %>vehicle.html"  class="nav__link<%= currentPage === 'vehicle'  ? ' active' : '' %>" aria-current="<%= currentPage === 'vehicle'  ? 'page' : 'false' %>">Vehicle</a></li>
+      <li><a href="<%= rootPath %>team.html"     class="nav__link<%= currentPage === 'team'     ? ' active' : '' %>" aria-current="<%= currentPage === 'team'     ? 'page' : 'false' %>">Team</a></li>
+      <li><a href="<%= rootPath %>blog.html"     class="nav__link<%= currentPage === 'blog'     ? ' active' : '' %>" aria-current="<%= currentPage === 'blog'     ? 'page' : 'false' %>">Blog</a></li>
+      <li><a href="<%= rootPath %>sponsors.html" class="nav__link<%= currentPage === 'sponsors' ? ' active' : '' %>" aria-current="<%= currentPage === 'sponsors' ? 'page' : 'false' %>">Sponsors</a></li>
+      <li><a href="<%= rootPath %>contact.html"  class="nav__link<%= currentPage === 'contact'  ? ' active' : '' %>" aria-current="<%= currentPage === 'contact'  ? 'page' : 'false' %>">Contact</a></li>
+    </ul>
+  </nav>
+</header>

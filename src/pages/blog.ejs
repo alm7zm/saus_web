@@ -1,0 +1,77 @@
+﻿<%- include('../components/header', {
+  title: 'Blog',
+  description: 'Engineering updates, flight test reports, and build journal from the Industry 4.0 Aerospace team at Meridian Institute of Technology.',
+  pageClass: 'page-blog',
+  currentPage: 'blog',
+  cssFiles, rootPath, team
+}) %>
+
+<main id="main-content">
+
+  <div class="page-hero">
+    <div class="container">
+      <nav class="breadcrumb" aria-label="Breadcrumb">
+        <a href="<%= rootPath %>index.html">Home</a>
+        <span aria-hidden="true">&rsaquo;</span>
+        <span aria-current="page">Blog</span>
+      </nav>
+      <h1 class="page-hero__title">Build Journal</h1>
+      <p class="page-hero__desc">Flight tests, design decisions, manufacturing walkthrough, and competition updates.</p>
+    </div>
+    <div class="divider-bar" aria-hidden="true"></div>
+  </div>
+
+  <section class="section" aria-labelledby="posts-heading">
+    <div class="container">
+      <div class="blog-layout">
+
+        <!-- POSTS -->
+        <div>
+          <div class="section__header" style="margin-bottom: 1.5rem;">
+            <h2 class="section__title" id="posts-heading" style="font-size: 1.25rem;">All Posts</h2>
+          </div>
+          <div class="blog-grid" id="blog-grid">
+            <% blog.posts.forEach(function(post) { %>
+            <%- include('../components/blog-card', { post, rootPath }) %>
+            <% }); %>
+          </div>
+        </div>
+
+        <!-- SIDEBAR -->
+        <aside aria-label="Blog sidebar">
+          <div class="sidebar__card">
+            <h2 class="sidebar__title">Categories</h2>
+            <ul class="sidebar__category-list" role="list">
+              <% blog.sidebar.categories.forEach(function(cat) { %>
+              <li class="sidebar__cat-item">
+                <span><%- cat.name %></span>
+                <span class="sidebar__cat-count"><%= cat.count %></span>
+              </li>
+              <% }); %>
+            </ul>
+          </div>
+          <div class="sidebar__card">
+            <h2 class="sidebar__title">Season Timeline</h2>
+            <ul class="sidebar__season-list" role="list">
+              <% blog.sidebar.timeline.forEach(function(item) { %>
+              <li class="sidebar__season-item">
+                <span class="sidebar__season-label<%= item.highlight ? ' sidebar__season-label--highlight' : '' %>"><%= item.label %></span>
+                <span class="sidebar__season-title<%= item.highlight ? ' sidebar__season-title--highlight' : '' %>"><%= item.title %></span>
+                <span class="sidebar__season-date"><%= item.date %></span>
+              </li>
+              <% }); %>
+            </ul>
+          </div>
+        </aside>
+
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<%- include('../components/footer', { rootPath, team }) %>
+<script defer src="<%= rootPath %>js/main.js"></script>
+</body>
+</html>
+

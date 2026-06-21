@@ -1,0 +1,90 @@
+{
+  "tiers": [
+    {
+      "id": "platinum",
+      "name": "Platinum Partners",
+      "labelClass": "tier-label--platinum",
+      "badgeStyle": "badge--orange",
+      "badgeText": "Platinum",
+      "gridClass": "sponsor-grid-platinum",
+      "sponsors": [
+        {
+          "name": "AeroTech Systems Inc.",
+          "logoInitials": "AT",
+          "logoColorClass": "sponsor-card__logo-box--blue",
+          "industry": "Avionics &amp; UAV Electronics &middot; San Jose, CA",
+          "desc": "AeroTech Systems Inc. is a leading manufacturer of avionics hardware and drone-specific electronic components serving professional and competition UAV teams across North America. Founded in 2014, AeroTech specializes in miniaturized power electronics, high-integrity sensor modules, and flight control accessories used in both commercial and defense UAV platforms. Their engineering team actively mentors student teams in electrical systems design and has supported I4A since the program's second season.",
+          "contribution": "Provided the Cube Orange+ flight controller, Here3+ RTK GPS, and RFD900x telemetry radios at no cost. Also supplied $4,000 in financial sponsorship toward competition travel expenses.",
+          "badges": ["Avionics", "Financial", "Mentorship"],
+          "badgeVariant": "badge--blue",
+          "url": "#"
+        },
+        {
+          "name": "Pinnacle Composites Ltd.",
+          "logoInitials": "PC",
+          "logoColorClass": "sponsor-card__logo-box--orange",
+          "industry": "Advanced Materials Manufacturing &middot; Portland, OR",
+          "desc": "Pinnacle Composites Ltd. produces aerospace-grade carbon fiber fabric, prepreg materials, and Kevlar hybrid textiles used in motorsport, marine, and aviation applications. Their R&amp;D division collaborates with universities on structural composites research, and they host an annual student composites challenge that I4A members have competed in since 2023. Pinnacle's technical advisors assisted Yasmin Volkov's team in optimizing the Raptor-VII layup schedule and vacuum bagging parameters.",
+          "contribution": "Supplied 18 m² of 3K twill carbon fiber fabric, 6 m² of CF/Kevlar hybrid, epoxy resin systems, and peel-ply consumables for the full airframe build. Estimated material value: $2,800.",
+          "badges": ["Materials", "Technical Support"],
+          "badgeVariant": "badge--orange",
+          "url": "#"
+        }
+      ]
+    },
+    {
+      "id": "gold",
+      "name": "Gold Partners",
+      "labelClass": "tier-label--gold",
+      "badgeStyle": "",
+      "badgeText": "Gold",
+      "badgeInlineStyle": "background:#FEF9C3;color:#92400E;",
+      "gridClass": "sponsor-grid-gold",
+      "sponsors": [
+        {
+          "name": "ClearSky Analytics",
+          "logoInitials": "CS",
+          "logoColorClass": "sponsor-card__logo-box--green",
+          "industry": "AI &amp; Computer Vision Software &middot; Austin, TX",
+          "desc": "ClearSky Analytics builds AI-powered analytics platforms for aerial imagery processing, including object detection and geospatial analysis tools used by defence contractors and precision agriculture operators. Their open-source Aerial Detection Toolkit (ADTk) formed the initial foundation of I4A's ODLC pipeline before the team's custom YOLOv8 fine-tuning. ClearSky engineers held two virtual workshops with Dania Osei's software team on model optimization for edge inference.",
+          "contribution": "Provided full-year access to ClearSky's annotation platform (value $3,600/yr), a synthetic aerial imagery dataset of 8,000 labelled targets, and two embedded compute credits for Jetson Orin development boards.",
+          "badges": ["Software", "Datasets", "Mentorship"],
+          "badgeVariant": "badge--blue",
+          "url": "#"
+        },
+        {
+          "name": "TurboFlight Solutions",
+          "logoInitials": "TF",
+          "logoColorClass": "sponsor-card__logo-box--teal",
+          "industry": "UAV Propulsion Systems &middot; Denver, CO",
+          "desc": "TurboFlight Solutions distributes premium electric propulsion systems for professional and competition UAV applications, representing brands including T-Motor, KDE Direct, and Xoar in North America. Their propulsion engineering team provides free technical consultation to competition teams and maintains a test database of over 400 motor-propeller-battery combination profiles that proved invaluable to Priya Sharma's bench-testing campaign.",
+          "contribution": "Supplied two T-Motor MN505-S motors, four 6S 6,000 mAh LiPo batteries, three sets of 18×6\" CF propellers, and two Flame 60A ESCs at cost price. Estimated savings: $1,400.",
+          "badges": ["Propulsion", "Hardware"],
+          "badgeVariant": "badge--blue",
+          "url": "#"
+        }
+      ]
+    },
+    {
+      "id": "silver",
+      "name": "Silver Partners",
+      "labelClass": "tier-label--silver",
+      "badgeStyle": "badge--blue",
+      "badgeText": "Silver",
+      "gridClass": "sponsor-grid-silver",
+      "sponsors": [
+        {
+          "name": "Meridian Innovation Fund",
+          "logoInitials": "MIF",
+          "logoColorClass": "sponsor-card__logo-box--purple",
+          "industry": "University R&amp;D Grants Program",
+          "desc": "The Meridian Innovation Fund is the Meridian Institute of Technology's competitive grant program for student-led engineering projects. Operating since 2018, MIF has distributed over $1.2 million to 47 student teams across all engineering disciplines. I4A has been a recipient for three consecutive years, with funding used for competition registration, travel, and consumable materials. The fund requires a mid-year progress report and public presentation of outcomes.",
+          "contribution": "$3,500 in project funding covering competition registration fees, accommodation at Webster Field, and airfield access fees for test flights.",
+          "badges": ["Financial"],
+          "badgeVariant": "badge--blue",
+          "url": "#"
+        }
+      ]
+    }
+  ]
+}
