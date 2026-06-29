@@ -1,0 +1,32 @@
+[
+  {
+    "title": "Home",
+    "url": "/",
+    "content": "Industry 4.0 Aerospace. Designing, building, and flying fully autonomous fixed-wing aircraft. We compete at the AUVSI Student Unmanned Aerial Systems competition — pushing the limits of autonomous flight, computer vision, and precision payload delivery. What We Do From airframe fabrication to computer vision, every subsystem is designed, built, and tested by our student engineers."
+  },
+  {
+    "title": "Vehicle",
+    "url": "/vehicle",
+    "content": "I4A Raptor-VII Seventh-generation fixed-wing autonomous aircraft. Carbon fiber composite airframe, ArduPilot guidance, and a precision ODLC imaging payload system. Technical Specifications"
+  },
+  {
+    "title": "Team",
+    "url": "/team",
+    "content": "Eight engineers. One competition season. Endless iterations."
+  },
+  {
+    "title": "Blog",
+    "url": "/blog",
+    "content": "Build Journal Flight tests, design decisions, manufacturing walkthrough, and competition updates."
+  },
+  {
+    "title": "Sponsors",
+    "url": "/sponsors",
+    "content": "Our Sponsors Industry partnerships that make autonomous flight research possible. These organizations provide the hardware, materials, software, and financial support that make the Raptor-VII programme possible."
+  },
+  {
+    "title": "Contact",
+    "url": "/contact",
+    "content": "Contact Us Sponsorship, media, collaboration, or just saying hello — we'd love to hear from you. Get in Touch Send a Message Have a question about sponsorship, media access, or our engineering? We'll get back to you within 48 hours during term."
+  }
+]

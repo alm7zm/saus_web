@@ -34,6 +34,27 @@ async function render(templatePath, outPath, locals) {
     root:  SRC,
   });
   await fse.outputFile(outPath, html);
+
+  return html;
+}
+
+function htmlToText(html) {
+  // Extract only the contents inside <main>...</main>
+  const mainMatch = html.match(/<main[^>]*>([\s\S]*?)<\/main>/i);
+
+  // If no <main> exists, fall back to the whole page
+  const mainContent = mainMatch ? mainMatch[1] : html;
+
+  return mainContent
+    .replace(/<script[\s\S]*?<\/script>/gi, '')
+    .replace(/<style[\s\S]*?<\/style>/gi, '')
+    .replace(/<[^>]+>/g, ' ')
+    .replace(/&nbsp;/g, ' ')
+    .replace(/&amp;/g, '&')
+    .replace(/&#39;/g, "'")
+    .replace(/&quot;/g, '"')
+    .replace(/\s+/g, ' ')
+    .trim();
 }
 
 // ── MAIN BUILD ────────────────────────────────────────────────────────────── //
@@ -47,14 +68,15 @@ async function build() {
   await fse.copy(path.join(ROOT, 'assets'), path.join(DIST, 'assets'));
   await fse.copy(path.join(ROOT, 'css'),    path.join(DIST, 'css'));
   await fse.copy(path.join(ROOT, 'js'),     path.join(DIST, 'js'));
-
+  await fse.copy(path.join(SRC, 'data'),    path.join(DIST, 'data'));
+  
   // 3. GitHub Pages: disable Jekyll processing
   await fse.outputFile(path.join(DIST, '.nojekyll'), '');
 
   // 4. Load all content
   const data = loadData();
-  const { team, vehicle, blog, sponsors, achievements } = data;
-
+  const { team, vehicle, blog, sponsors, achievements, } = data;
+  const searchIndex = [];
   // 5. Render top-level pages
   const pages = [
     {
@@ -108,7 +130,7 @@ async function build() {
   ];
 
   for (const p of pages) {
-    await render(
+    const html = await render(
       path.join(SRC, 'pages', p.template),
       path.join(DIST, p.out),
       {
@@ -119,13 +141,21 @@ async function build() {
         ...p.extra,
       }
     );
+    const text = htmlToText(html);
+
+    searchIndex.push({
+      title: p.title,
+      url: '/' + p.out,
+      content: text
+    });
+
     console.log(`  ✓ dist/${p.out}`);
   }
 
   // 6. Generate team member pages
   const memberCss = CSS_BASE;
   for (const member of team.members) {
-    await render(
+    const html = await render(
       path.join(SRC, 'pages', 'team-member.ejs'),
       path.join(DIST, 'team', `${member.slug}.html`),
       {
@@ -136,6 +166,14 @@ async function build() {
         rootPath:    '../../',
       }
     );
+    const text = htmlToText(html);
+
+    searchIndex.push({
+      title: member.name,
+      url: '/team/' + member.slug + '.html',
+      content: text
+    });
+
     console.log(`  ✓ dist/team/${member.slug}.html`);
   }
 
@@ -145,7 +183,7 @@ async function build() {
     const post     = blog.posts[i];
     const prevPost = i > 0 ? blog.posts[i - 1] : null;
     const nextPost = i < blog.posts.length - 1 ? blog.posts[i + 1] : null;
-    await render(
+    const html = await render(
       path.join(SRC, 'pages', 'blog-post.ejs'),
       path.join(DIST, 'blog', `${post.slug}.html`),
       {
@@ -158,9 +196,21 @@ async function build() {
         rootPath:    '../../',
       }
     );
+    const text = htmlToText(html);
+
+    searchIndex.push({
+      title: post.title,
+      url: '/blog/' + post.slug + '.html',
+      content: text
+    });
+
     console.log(`  ✓ dist/blog/${post.slug}.html`);
   }
-
+  await fse.outputJson(
+  path.join(DIST, 'data', 'index-search.json'),
+  searchIndex,
+  { spaces: 2 }
+  );
   const totalPages = pages.length + team.members.length + blog.posts.length;
   console.log(`\n✅ Build complete — ${totalPages} pages generated in dist/\n`);
 }
